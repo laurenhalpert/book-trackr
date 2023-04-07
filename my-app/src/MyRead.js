@@ -4,7 +4,7 @@ import BookList from "./BookList"
 function MyRead({ books }) {
     return(
         <div id="myread">
-            <h3>Read</h3>
+            <h1>My Read Books</h1>
             <BookList books={books} />
         </div>
     )

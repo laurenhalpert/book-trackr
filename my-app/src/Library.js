@@ -5,7 +5,7 @@ import NewBook from "./NewBook"
 function Library({books, onAddToTBR, onAddToRead, onRemove }) {
     return(
         <div id="library">
-            <h1>Library Page</h1>
+            <h1>Library</h1>
             <BookList books={books} onAddToTBR={onAddToTBR} onAddToRead={onAddToRead} onRemove={onRemove}/>
             <br></br>
             <h2>Don't see what you're looking for?</h2>

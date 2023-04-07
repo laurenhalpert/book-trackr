@@ -5,7 +5,7 @@ function MyTBR ({ books, onAddToTBR, onAddToRead, onRemove }) {
     console.log(books)
     return(
         <div id="mytbr">
-            <h3>TBR</h3>
+            <h1>My TBR</h1>
             <BookList books={books} onAddToRead={onAddToRead} onAddToTBR={onAddToTBR} onRemove={onRemove}/>
         </div>
     )
