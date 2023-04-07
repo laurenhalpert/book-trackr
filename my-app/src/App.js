@@ -17,7 +17,11 @@ function App() {
   useEffect(()=>{
     fetch("http://localhost:3000/books")
     .then(r=>r.json())
-    .then(books => setBooks(books))
+    .then(books => {
+      setBooks(books.filter(book=> !book.onTBR && !book.onRead))
+      setTBRBooks(books.filter(book => book.onTBR))
+      setReadBooks(books.filter(book=> book.onRead))
+    })
   }, [])
 
   function updateTBRBooks(bookObj) {
