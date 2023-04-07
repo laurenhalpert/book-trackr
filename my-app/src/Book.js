@@ -32,7 +32,7 @@ function Book ({ book, onAddToTBR, onAddToRead, onRemove }) {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({onTBR: false})
+                body: JSON.stringify({onTBR: false, onRead: false})
             })
             .then(r=>r.json())
             .then(book => onRemove(book))
@@ -45,7 +45,7 @@ function Book ({ book, onAddToTBR, onAddToRead, onRemove }) {
             <img src={book.image} alt={book.title}></img>
             <br></br>
             {book.onRead? null: <button onClick={handleClick}>{book.onTBR? "Move to My Read Books" : "Add To My TBR"}</button>}
-            {book.onTBR? <button onClick={handleRemove}>Remove</button>: null}
+            {book.onTBR? <button onClick={handleRemove}>Remove from TBR</button>: book.onRead? <button onClick={handleRemove}>Remove from Read</button>: null}
             
         </div>
     )

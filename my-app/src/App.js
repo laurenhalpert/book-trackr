@@ -37,6 +37,7 @@ function App() {
 
   function handleRemoval(bookObj){
     setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
+    setReadBooks(readBooks.filter(book => book.id !== bookObj.id))
     setBooks([...books, bookObj])
   }
 
@@ -76,7 +77,7 @@ function App() {
             />
           </Route>
           <Route path="/myread">
-            <MyRead books={readBooks}/>
+            <MyRead books={readBooks} onRemove={handleRemoval}/>
           </Route>
         </Switch>
 

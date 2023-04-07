@@ -5,7 +5,7 @@
       "title": "Apples Never Fall",
       "author": "Liane Moriarty",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611956842i/56143578._SY75_.jpg",
-      "onTBR": true,
+      "onTBR": false,
       "onRead": false
     },
     {
@@ -37,7 +37,7 @@
       "author": "sjm",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620324329i/50659467._SY75_.jpg",
       "onTBR": false,
-      "onRead": true,
+      "onRead": false,
       "id": 5
     }
   ]
