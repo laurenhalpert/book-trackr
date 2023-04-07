@@ -2,7 +2,7 @@ import React from "react"
 import BookList from "./BookList"
 
 function MyTBR ({ books, onAddToTBR, onAddToRead, onRemove }) {
-    console.log(books)
+    
     return(
         <div id="mytbr">
             <h1>My TBR</h1>
