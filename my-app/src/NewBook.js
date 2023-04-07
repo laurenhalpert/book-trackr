@@ -4,7 +4,7 @@ function NewBook ({ onNewBook }) {
     const [title, setTitle] =useState("")
     const [author, setAuthor] = useState("")
     const [image, setImage] = useState("")
-    const [formData, setFormData] =useState({title: "", author:"", image:"", onTBR: false})
+    const [formData, setFormData] =useState({title: "", author:"", image:"", onTBR: false, onRead: false})
 
     function handleChange(e) {
         setFormData({

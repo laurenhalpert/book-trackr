@@ -21,23 +21,26 @@ function App() {
   }, [])
 
   function updateTBRBooks(bookObj) {
-    bookObj.onTBR = true;
+    
+    setBooks(books.map(book => book.id === bookObj.id? bookObj : book))
     setTBRBooks([...tBRBooks, bookObj])
   }
 
   function updateReadBooks(bookObj) {
+    setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
     setReadBooks([...readBooks, bookObj])
   }
 
   function handleRemoval(bookObj){
     setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
+    setBooks([...books, bookObj])
   }
 
   function handleNewBook(bookObj) {
     console.log(bookObj)
     setBooks([...books, bookObj])
   }
-  const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()))
+  const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()) && !book.onTBR)
   
   return (
     <div className="App">
