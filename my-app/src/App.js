@@ -50,10 +50,23 @@ function App() {
             <Home />
           </Route>
           <Route path="/library">
-            <Library books={books} onAddToTBR={updateTBRBooks} onAddToRead={updateReadBooks} onRemove={handleRemoval} onNewBook={handleNewBook} search={search} onSearch={setSearch}/>
+            <Library 
+              books={books} 
+              onAddToTBR={updateTBRBooks} 
+              onAddToRead={updateReadBooks} 
+              onRemove={handleRemoval} 
+              onNewBook={handleNewBook} 
+              search={search} 
+              onSearch={setSearch}
+            />
           </Route>
           <Route path="/mytbr">
-            <MyTBR books={tBRBooks} onAddToRead={updateReadBooks} onAddToTBR={updateTBRBooks} onRemove={handleRemoval}/>
+            <MyTBR 
+              books={tBRBooks} 
+              onAddToRead={updateReadBooks} 
+              onAddToTBR={updateTBRBooks} 
+              onRemove={handleRemoval}
+            />
           </Route>
           <Route path="/myread">
             <MyRead books={readBooks}/>

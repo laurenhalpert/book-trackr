@@ -4,7 +4,7 @@ import NewBook from "./NewBook"
 import Search from "./Search"
 
 function Library({books, onAddToTBR, onAddToRead, onRemove, onNewBook, search, onSearch }) {
-    console.log(books)
+    
     return(
         <div id="library">
             <h1>Library</h1>

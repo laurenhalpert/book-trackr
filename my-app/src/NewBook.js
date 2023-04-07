@@ -4,25 +4,24 @@ function NewBook ({ onNewBook }) {
     const [title, setTitle] =useState("")
     const [author, setAuthor] = useState("")
     const [image, setImage] = useState("")
+    const [formData, setFormData] =useState({title: "", author:"", image:"", onTBR: false})
 
-    function handleChange(e, setter) {
-        setter(()=>e.target.value)
+    function handleChange(e) {
+        setFormData({
+            ...formData, 
+            [e.target.name]: e.target.value
+        })
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        const newBookObj = {
-            title: {title},
-            author: {author},
-            image: {image},
-        }
-        console.log(newBookObj)
+    function handleSubmit(event) {
+        event.preventDefault()
+        
         fetch("http://localhost:3000/books", {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(newBookObj)
+            body: JSON.stringify(formData)
         })
         .then(r=>r.json())
         .then(newBookObj => onNewBook(newBookObj))
@@ -30,17 +29,17 @@ function NewBook ({ onNewBook }) {
 
     return(
         <div id="newbook">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title: </label>
-                <input id="title" type="text" placeholder="Title..." value={title} onChange={(e, setter)=> handleChange(e, setTitle)}></input>
+                <input id="title" name="title" type="text" placeholder="Title..." value={formData.title} onChange={handleChange}></input>
                 <br></br>
                 <label htmlFor="author">Author: </label>
-                <input id="author" type="text" placeholder="Author..." value={author} onChange={(e, setter)=> handleChange(e, setAuthor)}></input>
+                <input id="author" name="author" type="text" placeholder="Author..." value={formData.author} onChange={handleChange}></input>
                 <br></br>
                 <label htmlFor="image">Image URL: </label>
-                <input id="image" type="text" placeholder="URL..." value={image} onChange={(e, setter)=> handleChange(e, setImage)}></input>
+                <input id="image" name="image" type="text" placeholder="URL..." value={formData.image} onChange={handleChange}></input>
                 <br></br>
-                <input id="submitBtn" type="submit" onSubmit={handleSubmit}></input>
+                <button id="submitBtn" type="submit">Submit</button>
             </form>
         </div>
     )
