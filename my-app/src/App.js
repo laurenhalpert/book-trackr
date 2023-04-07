@@ -9,35 +9,49 @@ import './App.css';
 
 function App() {
   const [tBRBooks, setTBRBooks] = useState([])
+  const [readBooks, setReadBooks] = useState([])
   const books = [
     {
       id: 1,
       title: "Apples Never Fall",
       author: "Liane Moriarty",
-      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611956842i/56143578._SY75_.jpg"
+      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611956842i/56143578._SY75_.jpg",
+      onTBR: false
     },
     {
       id: 2,
       title: "Truly Madly Guilty",
       author: "Liane Moriarty",
-      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491122565i/27831371._SY75_.jpg"
+      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491122565i/27831371._SY75_.jpg",
+      onTBR: false
     },
     {
       id: 3,
       title: "In Five Years",
       author: "Rebecca Serle",
-      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586399012i/50093704._SY75_.jpg"
+      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586399012i/50093704._SY75_.jpg",
+      onTBR: false
     },
     {
       id: 4,
       title: "One By One",
       author: "Ruth Ware",
-      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587655884i/50892433._SY75_.jpg"
+      image: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587655884i/50892433._SY75_.jpg",
+      onTBR: false
     }
   ]
 
   function updateTBRBooks(bookObj) {
+    bookObj.onTBR = true;
     setTBRBooks([...tBRBooks, bookObj])
+  }
+
+  function updateReadBooks(bookObj) {
+    setReadBooks([...readBooks, bookObj])
+  }
+
+  function handleRemoval(bookObj){
+    setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
   }
   
   return (
@@ -51,13 +65,13 @@ function App() {
             <Home />
           </Route>
           <Route path="/library">
-            <Library books={books} onAddToTBR={updateTBRBooks}/>
+            <Library books={books} onAddToTBR={updateTBRBooks} onAddToRead={updateReadBooks} onRemove={handleRemoval}/>
           </Route>
           <Route path="/mytbr">
-            <MyTBR books={tBRBooks} />
+            <MyTBR books={tBRBooks} onAddToRead={updateReadBooks} onAddToTBR={updateTBRBooks} onRemove={handleRemoval}/>
           </Route>
           <Route path="/myread">
-            <MyRead />
+            <MyRead books={readBooks}/>
           </Route>
         </Switch>
 

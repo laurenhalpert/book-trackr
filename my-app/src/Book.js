@@ -1,8 +1,15 @@
 import React from "react"
 
-function Book ({ book, onAddToTBR }) {
+function Book ({ book, onAddToTBR, onAddToRead, onRemove }) {
     function handleClick(e) {
-        return e.target.innerText === "Add To My TBR" ? onAddToTBR(book) : null
+        if (e.target.innerText === "Add To My TBR"){
+            onAddToTBR(book)
+        } else if (e.target.innerText === "Move to My Read Books") {
+            onAddToRead(book)
+        }
+    }
+    function handleRemove(e){
+        onRemove(book)
     }
     return(
         <div id="book">
@@ -10,8 +17,8 @@ function Book ({ book, onAddToTBR }) {
             <p>{book.author}</p>
             <img src={book.image} alt={book.title}></img>
             <br></br>
-            <button onClick={handleClick}>Add To My TBR</button>
-           
+            <button onClick={handleClick}>{book.onTBR? "Move to My Read Books" : "Add To My TBR"}</button>
+            {book.onTBR? <button onClick={handleRemove}>Remove</button>: null}
             
         </div>
     )
