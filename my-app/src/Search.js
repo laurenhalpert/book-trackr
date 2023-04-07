@@ -6,7 +6,7 @@ function Search({ search, onSearch }) {
     }
     return(
         <div>
-            <label htmlFor="searchBar">Search: </label>
+            <label htmlFor="searchBar">Search by Title: </label>
             <input id="searchBar" type="text" placeholder="Search..." value={search} onChange={handleChange}></input>
         </div>
     )

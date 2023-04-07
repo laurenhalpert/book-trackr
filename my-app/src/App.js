@@ -37,7 +37,7 @@ function App() {
     console.log(bookObj)
     setBooks([...books, bookObj])
   }
-
+  const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()))
   
   return (
     <div className="App">
@@ -51,7 +51,7 @@ function App() {
           </Route>
           <Route path="/library">
             <Library 
-              books={books} 
+              books={booksToDisplay} 
               onAddToTBR={updateTBRBooks} 
               onAddToRead={updateReadBooks} 
               onRemove={handleRemoval} 
