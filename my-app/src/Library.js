@@ -8,7 +8,7 @@ function Library({ books, onAddToTBR, onAddToRead, onRemove, onNewBook, search, 
     
     
     return(
-        <div id="library">
+        <div id="library" style={{background: "#A3BFBD"}}>
             <h1>Library</h1>
             <Search search={search} onSearch={onSearch}/>
             <Sort onSort={onSort} books={books}  />
