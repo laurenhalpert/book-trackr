@@ -36,8 +36,8 @@
       "title": "A Court of Thorns and Roses",
       "author": "Sarah J. Maas",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620324329i/50659467._SY75_.jpg",
-      "onTBR": false,
-      "onRead": true,
+      "onTBR": true,
+      "onRead": false,
       "id": 5
     },
     {
@@ -47,6 +47,14 @@
       "onTBR": false,
       "onRead": false,
       "id": 6
+    },
+    {
+      "title": "The Invisible Life Of Addie LaRue",
+      "author": "V. E. Schwab",
+      "image": "Https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1584633432i/50623864._SY75_.jpg",
+      "onTBR": false,
+      "onRead": true,
+      "id": 7
     }
   ]
 }

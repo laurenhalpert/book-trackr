@@ -1,14 +1,11 @@
 import React, { useState } from "react"
 
 function NewBook ({ onNewBook }) {
-    const [title, setTitle] =useState("")
-    const [author, setAuthor] = useState("")
-    const [image, setImage] = useState("")
     const [formData, setFormData] =useState({title: "", author:"", image:"", onTBR: false, onRead: false})
 
     function handleChange(e) {
         let titleCased = e.target.value.split(" ").map(word => word.charAt(0).toUpperCase()+word.substring(1)).join(" ")
-        console.log(titleCased)
+        
         setFormData({
             ...formData, 
             [e.target.name]: titleCased

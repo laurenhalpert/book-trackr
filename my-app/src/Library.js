@@ -4,10 +4,8 @@ import NewBook from "./NewBook"
 import Search from "./Search"
 import Sort from "./Sort"
 
-function Library({ books, onAddToTBR, onAddToRead, onRemove, onNewBook, search, onSearch, onSort, setOnPage }) {
-    useEffect(()=>{
-        setOnPage("library")
-    },[])
+function Library({ books, onAddToTBR, onAddToRead, onRemove, onNewBook, search, onSearch, onSort}) {
+    
     
     return(
         <div id="library">
