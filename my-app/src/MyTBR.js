@@ -1,6 +1,6 @@
 import React from "react"
 import BookList from "./BookList"
-import Sort from "./Sort"
+
 
 function MyTBR ({ books, onAddToTBR, onAddToRead, onRemove }) {
     
