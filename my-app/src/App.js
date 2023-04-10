@@ -13,6 +13,7 @@ function App() {
   const [tBRBooks, setTBRBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
   const [search, setSearch] = useState("")
+  const [sortVal, setSortVal] = useState("default")
 
   useEffect(()=>{
     fetch("http://localhost:3000/books")
@@ -45,8 +46,60 @@ function App() {
     console.log(bookObj)
     setBooks([...books, bookObj])
   }
+
+  function handleSort(val, arr){
+    
+    function compareDefault (a,b){
+      if (a.id < b.id) {
+        return -1;
+      } else if (a.id>b.id) {
+        return 1;
+      }
+      return 0
+    }
+    function compareTitle (a,b){
+      if (a.title < b.title) {
+        return -1;
+      } else if (a.title>b.title) {
+        return 1;
+      }
+      return 0
+    }
+    function compareAuthor (a,b){
+      if (a.author < b.author) {
+        return -1;
+      } else if (a.author>b.author) {
+        return 1;
+      }
+      return 0
+    }
+    
+    let sortedArr;
+    if (val === "default") {
+      sortedArr = arr.sort(compareDefault)
+      
+      setBooks(()=>sortedArr)
+    } else if (val === "title") {
+      sortedArr =  arr.sort(compareTitle)
+      
+      setBooks(()=>sortedArr)
+    } else if (val === "author") {
+      sortedArr =  arr.sort(compareAuthor)
+      
+      setBooks(()=>sortedArr)
+    }
+    //onTBR? onRead?
+    //if val === default map by id
+    //if val === title map by title
+    //if val === author map by author
+  }
+
   const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()) && !book.onTBR)
+  console.log(booksToDisplay)
   
+  console.log(books)
+  console.log(tBRBooks)
+  console.log(readBooks)
   return (
     <div className="App">
       <header>
@@ -66,6 +119,7 @@ function App() {
               onNewBook={handleNewBook} 
               search={search} 
               onSearch={setSearch}
+              onSort={handleSort}
             />
           </Route>
           <Route path="/mytbr">
@@ -74,10 +128,11 @@ function App() {
               onAddToRead={updateReadBooks} 
               onAddToTBR={updateTBRBooks} 
               onRemove={handleRemoval}
+              onSort={handleSort}
             />
           </Route>
           <Route path="/myread">
-            <MyRead books={readBooks} onRemove={handleRemoval}/>
+            <MyRead books={readBooks} onRemove={handleRemoval} onSort={handleSort}/>
           </Route>
         </Switch>
 
