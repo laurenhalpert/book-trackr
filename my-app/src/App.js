@@ -13,7 +13,10 @@ function App() {
   const [tBRBooks, setTBRBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
   const [search, setSearch] = useState("")
-  const [sortVal, setSortVal] = useState("default")
+  // const [sortVal, setSortVal] = useState("default")
+  const [onPage, setOnPage] = useState("home")
+  
+  
 
   useEffect(()=>{
     fetch("http://localhost:3000/books")
@@ -43,12 +46,13 @@ function App() {
   }
 
   function handleNewBook(bookObj) {
-    console.log(bookObj)
+    
     setBooks([...books, bookObj])
   }
 
   function handleSort(val, arr){
-    
+    // setSortVal(()=>val);
+    console.log(onPage)
     function compareDefault (a,b){
       if (a.id < b.id) {
         return -1;
@@ -75,31 +79,41 @@ function App() {
     }
     
     let sortedArr;
+    
+
     if (val === "default") {
       sortedArr = arr.sort(compareDefault)
-      
-      setBooks(()=>sortedArr)
+      if (onPage === "library") {
+        setBooks(sortedArr)
+      } else if (onPage === "mytbr") {
+        setTBRBooks(sortedArr)
+      } else if (onPage === "myread") {
+        setReadBooks(sortedArr)
+      }
     } else if (val === "title") {
       sortedArr =  arr.sort(compareTitle)
-      
-      setBooks(()=>sortedArr)
+      if (onPage === "library") {
+        setBooks(sortedArr)
+      } else if (onPage === "mytbr") {
+        setTBRBooks(sortedArr)
+      } else if (onPage === "myread") {
+        setReadBooks(sortedArr)
+      }
     } else if (val === "author") {
       sortedArr =  arr.sort(compareAuthor)
-      
-      setBooks(()=>sortedArr)
+      if (onPage === "library") {
+        setBooks(sortedArr)
+      } else if (onPage === "mytbr") {
+        setTBRBooks(sortedArr)
+      } else if (onPage === "myread") {
+        setReadBooks(sortedArr)
+      }
     }
-    //onTBR? onRead?
-    //if val === default map by id
-    //if val === title map by title
-    //if val === author map by author
+    
   }
 
   const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()) && !book.onTBR)
-  console.log(booksToDisplay)
-  
-  console.log(books)
   console.log(tBRBooks)
-  console.log(readBooks)
   return (
     <div className="App">
       <header>
@@ -120,6 +134,7 @@ function App() {
               search={search} 
               onSearch={setSearch}
               onSort={handleSort}
+              setOnPage={setOnPage}
             />
           </Route>
           <Route path="/mytbr">
@@ -129,10 +144,16 @@ function App() {
               onAddToTBR={updateTBRBooks} 
               onRemove={handleRemoval}
               onSort={handleSort}
+              setOnPage={setOnPage}
             />
           </Route>
           <Route path="/myread">
-            <MyRead books={readBooks} onRemove={handleRemoval} onSort={handleSort}/>
+            <MyRead 
+              books={readBooks} 
+              onRemove={handleRemoval} 
+              onSort={handleSort}
+              setOnPage={setOnPage}
+            />
           </Route>
         </Switch>
 

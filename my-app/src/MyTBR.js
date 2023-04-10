@@ -1,13 +1,15 @@
-import React from "react"
+import React, {useEffect} from "react"
 import BookList from "./BookList"
 import Sort from "./Sort"
 
-function MyTBR ({ books, onAddToTBR, onAddToRead, onRemove, onSort }) {
-    
+function MyTBR ({ books, onAddToTBR, onAddToRead, onRemove, onSort, setOnPage }) {
+    useEffect(()=>{
+        setOnPage("mytbr")
+    }, [])
     return(
         <div id="mytbr">
             <h1>My TBR</h1>
-            <Sort onSort={onSort} books={books}/>
+            <Sort onSort={onSort} books={books} />
             <BookList books={books} onAddToRead={onAddToRead} onAddToTBR={onAddToTBR} onRemove={onRemove}/>
         </div>
     )
