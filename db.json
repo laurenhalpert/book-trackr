@@ -13,7 +13,7 @@
       "title": "Truly Madly Guilty",
       "author": "Liane Moriarty",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491122565i/27831371._SY75_.jpg",
-      "onTBR": true,
+      "onTBR": false,
       "onRead": false
     },
     {
@@ -36,8 +36,8 @@
       "title": "A Court of Thorns and Roses",
       "author": "Sarah J. Maas",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620324329i/50659467._SY75_.jpg",
-      "onTBR": true,
-      "onRead": false,
+      "onTBR": false,
+      "onRead": true,
       "id": 5
     },
     {

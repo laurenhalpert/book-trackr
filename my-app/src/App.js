@@ -10,11 +10,17 @@ import './App.css';
 function App() {
   
   const [books, setBooks] = useState([])
+  //could tBRBooks and readBooks be variables instead of state?
+  //  -they could be calculated by running a filter on books checking their onTBR and onRead properties
   const [tBRBooks, setTBRBooks] = useState([])
   const [readBooks, setReadBooks] = useState([])
+
   const [search, setSearch] = useState("")
   // const [sortVal, setSortVal] = useState("default")
   const [onPage, setOnPage] = useState("home")
+  // can be calculated via tBRBooks.length and readBooks.length
+  const [tBRCount, setTBRCount] = useState(0)
+  const [readCount, setReadCount] = useState(0)
   
   
 
@@ -32,17 +38,21 @@ function App() {
     
     setBooks(books.map(book => book.id === bookObj.id? bookObj : book))
     setTBRBooks([...tBRBooks, bookObj])
+    
   }
 
   function updateReadBooks(bookObj) {
     setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
     setReadBooks([...readBooks, bookObj])
+    
   }
 
   function handleRemoval(bookObj){
     setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
     setReadBooks(readBooks.filter(book => book.id !== bookObj.id))
     setBooks([...books, bookObj])
+    
+  
   }
 
   function handleNewBook(bookObj) {
@@ -52,7 +62,7 @@ function App() {
 
   function handleSort(val, arr){
     // setSortVal(()=>val);
-    console.log(onPage)
+    
     function compareDefault (a,b){
       if (a.id < b.id) {
         return -1;
@@ -114,7 +124,6 @@ function App() {
 
   const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()) && !book.onTBR)
 
-  console.log(tBRBooks)
   return (
     <div className="App">
       <header>
@@ -146,6 +155,7 @@ function App() {
               onRemove={handleRemoval}
               onSort={handleSort}
               setOnPage={setOnPage}
+              
             />
           </Route>
           <Route path="/myread">
@@ -154,6 +164,7 @@ function App() {
               onRemove={handleRemoval} 
               onSort={handleSort}
               setOnPage={setOnPage}
+              
             />
           </Route>
         </Switch>
