@@ -21,7 +21,7 @@
       "title": "In Five Years",
       "author": "Rebecca Serle",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586399012i/50093704._SY75_.jpg",
-      "onTBR": true,
+      "onTBR": false,
       "onRead": false
     },
     {
@@ -36,7 +36,7 @@
       "title": "A Court of Thorns and Roses",
       "author": "Sarah J. Maas",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620324329i/50659467._SY75_.jpg",
-      "onTBR": true,
+      "onTBR": false,
       "onRead": false,
       "id": 5
     },
@@ -53,8 +53,16 @@
       "author": "V. E. Schwab",
       "image": "Https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1584633432i/50623864._SY75_.jpg",
       "onTBR": false,
-      "onRead": true,
+      "onRead": false,
       "id": 7
+    },
+    {
+      "title": "Circe",
+      "author": "Madeline Miller",
+      "image": "Https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740._SY75_.jpg",
+      "onTBR": false,
+      "onRead": false,
+      "id": 8
     }
   ]
 }
