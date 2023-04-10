@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# My Wizard Friends
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application is a way for users to keep track of books they'd like to read and track books they've read. Users can also add books to the Library by filling out the form at the bottom of the Library page.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Usage
 
-### `npm start`
+-Browse the Library of books and add books that you want to read to My TBR (My To Be Read)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-In the Library, users can search for a book by title and the books shown will reflect their search
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-In the Library, users can sort books alphabetically by title or author
 
-### `npm test`
+-If the user doesn't see a book that they'd like to add to their MyTBR, they can fill out the form at the bottom of the Library page and add their book to the Library, where they can then add the book to their My TBR
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-If a book was mistakenly added to My TBR the user can remove the book from their My TBR page and it will reappear in the Library
 
-### `npm run build`
+-Upon completion of a book, a user can move the book from their My TBR to their My Read Books
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-If a book was mistakenly added to My Read Books the user can remove the book from their My Read Books and the book will reappear in the Library
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## GitHub URL
 
-### `npm run eject`
+https://github.com/laurenhalpert/phase-2-project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acknowledgments
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Image Sources:
+    https://thumbs.gfycat.com/GlitteringAcceptableEchidna-size_restricted.gif
+    Https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740._SY75_.jpg
+    Https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1584633432i/50623864._SY75_.jpg
+    Https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559142847i/44778083._SY75_.jpg
+    https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620324329i/50659467._SY75_.jpg
+    https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587655884i/50892433._SY75_.jpg
+    https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586399012i/50093704._SY75_.jpg
+    https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491122565i/27831371._SY75_.jpg
+    https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611956842i/56143578._SY75_.jpg
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Not open to contributions at this time.
