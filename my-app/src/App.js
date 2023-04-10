@@ -11,12 +11,7 @@ function App() {
   
   const [books, setBooks] = useState([])
   const [search, setSearch] = useState("")
-  //could tBRBooks and readBooks be variables instead of state?
-  //  -they could be calculated by running a filter on books checking their onTBR and onRead properties
-  // const [tBRBooks, setTBRBooks] = useState([])
-  // const [readBooks, setReadBooks] = useState([])
   
-  //const [search, setSearch] = useState("")
  
 
   
@@ -28,8 +23,7 @@ function App() {
     .then(r=>r.json())
     .then(books => {
       setBooks(books)
-      //setTBRBooks(books.filter(book => book.onTBR))
-      //setReadBooks(books.filter(book=> book.onRead))
+      
     })
   }, [])
 
@@ -38,20 +32,18 @@ function App() {
   function updateTBRBooks(bookObj) {
     
     setBooks(books.map(book => book.id === bookObj.id? bookObj : book))
-    //setTBRBooks([...tBRBooks, bookObj])
+    
     
   }
 
   function updateReadBooks(bookObj) {
-    //setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
-    //setReadBooks([...readBooks, bookObj])
+    
     setBooks(books.map(book=> book.id === bookObj.id? bookObj: book))
     
   }
 
   function handleRemoval(bookObj){
-    //setTBRBooks(tBRBooks.filter(book => book.id !== bookObj.id))
-    //setReadBooks(readBooks.filter(book => book.id !== bookObj.id))
+    
     setBooks(books.map(book=> book.id === bookObj.id? bookObj: book))
     
   
@@ -103,51 +95,15 @@ function App() {
       sortedArr = arr.sort(compareAuthor)
     }
     setBooks(sortedArr)
-    // if (val === "default") {
-    //   sortedArr = arr.sort(compareDefault)
-    //   if (onPage === "library") {
-    //     setBooks(sortedArr)
-    //   } else if (onPage === "mytbr") {
-    //     tBRBooks = sortedArr
-    //     //setTBRBooks(()=>sortedArr)
-    //   } else if (onPage === "myread") {
-    //     readBooks = sortedArr
-    //     //setReadBooks(()=>sortedArr)
-    //   }
-    // } else if (val === "title") {
-    //   sortedArr =  arr.sort(compareTitle)
-    //   if (onPage === "library") {
-    //     setBooks(sortedArr)
-    //   } else if (onPage === "mytbr") {
-    //     tBRBooks = sortedArr
-    //     //setTBRBooks(()=>sortedArr)
-    //   } else if (onPage === "myread") {
-    //     readBooks = sortedArr
-    //     //setReadBooks(()=>sortedArr)
-    //   }
-    // } else if (val === "author") {
-    //   sortedArr =  arr.sort(compareAuthor)
-    //   setBooks(sortedArr)
-    //   // if (onPage === "library") {
-    //   //   setBooks(sortedArr)
-    //   // } else if (onPage === "mytbr") {
-    //   //   tBRBooks = sortedArr
-    //   //   //setTBRBooks(()=>sortedArr)
-    //   // } else if (onPage === "myread") {
-    //   //   readBooks = sortedArr
-    //   //   //setReadBooks(()=>sortedArr)
-    //   // }
-    // }
+    
     
   }
 
-  // const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()) && !book.onTBR)
-  // const tBRBooks = books.filter(book=> book.onTBR)
-  // const readBooks = books.filter(book => book.onRead)
+  
   return (
     <div className="App">
-      <header>
-        <h1>Book Trackr</h1>
+      <header style={{background: "#EFFEFD"}}>
+        <h1 id="site-title">Book Trackr</h1>
         <NavBar />
       </header>
       <Switch>
