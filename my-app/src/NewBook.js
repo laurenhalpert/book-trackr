@@ -7,9 +7,11 @@ function NewBook ({ onNewBook }) {
     const [formData, setFormData] =useState({title: "", author:"", image:"", onTBR: false, onRead: false})
 
     function handleChange(e) {
+        let titleCased = e.target.value.split(" ").map(word => word.charAt(0).toUpperCase()+word.substring(1)).join(" ")
+        console.log(titleCased)
         setFormData({
             ...formData, 
-            [e.target.name]: e.target.value
+            [e.target.name]: titleCased
         })
     }
 

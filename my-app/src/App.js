@@ -84,35 +84,36 @@ function App() {
     if (val === "default") {
       sortedArr = arr.sort(compareDefault)
       if (onPage === "library") {
-        setBooks(sortedArr)
+        setBooks(()=>sortedArr)
       } else if (onPage === "mytbr") {
-        setTBRBooks(sortedArr)
+        setTBRBooks(()=>sortedArr)
       } else if (onPage === "myread") {
-        setReadBooks(sortedArr)
+        setReadBooks(()=>sortedArr)
       }
     } else if (val === "title") {
       sortedArr =  arr.sort(compareTitle)
       if (onPage === "library") {
-        setBooks(sortedArr)
+        setBooks(()=>sortedArr)
       } else if (onPage === "mytbr") {
-        setTBRBooks(sortedArr)
+        setTBRBooks(()=>sortedArr)
       } else if (onPage === "myread") {
-        setReadBooks(sortedArr)
+        setReadBooks(()=>sortedArr)
       }
     } else if (val === "author") {
       sortedArr =  arr.sort(compareAuthor)
       if (onPage === "library") {
-        setBooks(sortedArr)
+        setBooks(()=>sortedArr)
       } else if (onPage === "mytbr") {
-        setTBRBooks(sortedArr)
+        setTBRBooks(()=>sortedArr)
       } else if (onPage === "myread") {
-        setReadBooks(sortedArr)
+        setReadBooks(()=>sortedArr)
       }
     }
     
   }
 
   const booksToDisplay= books.filter(book=> book.title.toLowerCase().includes(search.toLowerCase()) && !book.onTBR)
+
   console.log(tBRBooks)
   return (
     <div className="App">
