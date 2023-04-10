@@ -3,7 +3,7 @@ import Book from "./Book"
 
 function BookList({ books, onAddToTBR, onAddToRead, onRemove }) {
     return(
-        <div id="booklist">
+        <div className="booklist">
             {books.map(book => {
                 return(
                     <Book key={book.id} book={book} onAddToTBR={onAddToTBR} onAddToRead={onAddToRead} onRemove={onRemove}/>

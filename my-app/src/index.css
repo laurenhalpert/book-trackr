@@ -1,3 +1,8 @@
+header{
+  background: "black";
+  color: "white"
+}
+
 body {
   background: #EFFEFD;
   font-family: "Andale Mono";
@@ -19,4 +24,5 @@ span{
 input{
   margin: 10px;
 }
+
 
