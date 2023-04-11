@@ -24,6 +24,9 @@ This web application is a way for users to keep track of books they'd like to re
 
 https://github.com/laurenhalpert/phase-2-project
 
+## Video Walkthrough
+
+https://youtu.be/_822w-aSjSY
 
 ## Acknowledgments
 
@@ -37,7 +40,7 @@ Image Sources:
     https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586399012i/50093704._SY75_.jpg
     https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491122565i/27831371._SY75_.jpg
     https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611956842i/56143578._SY75_.jpg
-
+    https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634158558i/59344312._SY75_.jpg
 
 ## Contributing
 
