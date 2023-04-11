@@ -42,7 +42,7 @@ function Book ({ book, onAddToTBR, onAddToRead, onRemove }) {
         <div className="book" style={{background: "#EFFEFD"}}>
             <h2>{book.title}</h2>
             <p>{book.author}</p>
-            <img src={book.image} alt={book.title}></img>
+            <img className="book-image" style={{ height: "75px"}} src={book.image} alt={book.title}></img>
             <br></br>
             {book.onRead? null: <button onClick={handleClick}>{book.onTBR? "Move to My Read Books" : "Add To My TBR"}</button>}
             {book.onTBR? <button onClick={handleRemove}>Remove from TBR</button>: book.onRead? <button onClick={handleRemove}>Remove from Read</button>: null}
