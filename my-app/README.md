@@ -26,7 +26,7 @@ https://github.com/laurenhalpert/phase-2-project
 
 ## Video Walkthrough
 
-https://youtu.be/_822w-aSjSY
+https://youtu.be/OwkssMFrlr0
 
 ## Acknowledgments
 
