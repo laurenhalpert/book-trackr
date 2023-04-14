@@ -5,7 +5,7 @@ import BookList from "./BookList"
 function MyRead({ books, onRemove }) {
     
     return(
-        <div id="myread" style={{background: "#A3BFBD"}}>
+        <div className="page">
             <h1>My Read Books</h1>
             <h2>{books.length} {books.length === 1? "Book Read": "Books Read"}</h2>
            

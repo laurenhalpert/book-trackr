@@ -39,7 +39,7 @@ function Book ({ book, onAddToTBR, onAddToRead, onRemove }) {
         
     }
     return(
-        <div className="book" style={{background: "#EFFEFD"}}>
+        <div className="book" >
             <h2>{book.title}</h2>
             <p>{book.author}</p>
             <img className="book-image" style={{ height: "75px"}} src={book.image} alt={book.title}></img>

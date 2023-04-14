@@ -21,3 +21,16 @@ input{
   margin: 10px;
 }
 
+div.page {
+  background: #A3BFBD;
+}
+
+div.book{
+  background: #EFFEFD;
+}
+
+
+
+header {
+  background: #EFFEFD;
+}
