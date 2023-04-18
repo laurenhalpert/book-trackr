@@ -1,4 +1,4 @@
-# My Wizard Friends
+# Book Trackr
 
 This web application is a way for users to keep track of books they'd like to read and track books they've read. Users can also add books to the Library by filling out the form at the bottom of the Library page.
 

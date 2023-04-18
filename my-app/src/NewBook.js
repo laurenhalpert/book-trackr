@@ -3,7 +3,7 @@ import React, { useState } from "react"
 function NewBook ({ onNewBook }) {
     const [formData, setFormData] =useState({title: "", author:"", image:"", onTBR: false, onRead: false})
 
-    function handleChange(e) {
+    const handleChange = (e)=> {
         let titleCased = e.target.value.split(" ").map(word => word.charAt(0).toUpperCase()+word.substring(1)).join(" ")
         
         setFormData({
@@ -12,7 +12,7 @@ function NewBook ({ onNewBook }) {
         })
     }
 
-    function handleSubmit(event) {
+    const handleSubmit= (event) =>{
         event.preventDefault()
         
         fetch("http://localhost:3000/books", {

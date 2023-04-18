@@ -1,6 +1,7 @@
 import React from "react";
 
 function Home() {
+    
     return(
         <div className="page">
             <h2>Welcome!</h2>
@@ -8,6 +9,7 @@ function Home() {
             <p>Happy reading!</p>
             <img src="https://thumbs.gfycat.com/GlitteringAcceptableEchidna-size_restricted.gif" alt="library"></img>
         </div>
+
     )
 }
 
